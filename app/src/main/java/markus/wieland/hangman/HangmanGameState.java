@@ -1,30 +1,31 @@
 package markus.wieland.hangman;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import markus.wieland.games.persistence.GameState;
 
-public class HangmanGameState extends GameState {
+public class HangmanGameState extends GameState implements Serializable {
 
-    private final String word;
-    private final List<Character> usedCharacters;
+    private final HangmanWord word;
+    private final List<Guess> usedCharacters;
 
-    public HangmanGameState(String word) {
+    public HangmanGameState(HangmanWord word) {
         this.word = word;
         this.usedCharacters = new ArrayList<>();
     }
 
-    public HangmanGameState(String word, List<Character> usedCharacters) {
+    public HangmanGameState(HangmanWord word, List<Guess> usedCharacters) {
         this.word = word;
         this.usedCharacters = usedCharacters;
     }
 
-    public String getWord() {
+    public HangmanWord getWord() {
         return word;
     }
 
-    public List<Character> getUsedCharacters() {
+    public List<Guess> getUsedCharacters() {
         return usedCharacters;
     }
 }

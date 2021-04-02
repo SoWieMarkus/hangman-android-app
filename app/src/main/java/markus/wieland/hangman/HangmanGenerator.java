@@ -30,7 +30,12 @@ public class HangmanGenerator extends GameGenerator<HangmanGameState> {
         if (WORDS.isEmpty()) {
             loadWords();
         }
-        return new HangmanGameState(WORDS.get(random.nextInt(WORDS.size())));
+        String word;
+        do {
+            word = WORDS.get(random.nextInt(WORDS.size()));
+        } while (!word.matches("[a-zA-Z]+"));
+
+        return new HangmanGameState(word);
     }
 
     private void loadWords() {

@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 
 import markus.wieland.games.game.GameBoardField;
 
-public class HangmanGameBoardField extends GameBoardField implements View.OnClickListener{
+public class HangmanGameBoardField extends GameBoardField implements View.OnClickListener {
 
     private final Character character;
     private final HangmanGameBoardInteractionListener listener;
@@ -25,6 +25,7 @@ public class HangmanGameBoardField extends GameBoardField implements View.OnClic
     @Override
     public void update() {
         Button gameBoardField = (Button) view;
+        gameBoardField.setText(character.toString());
 
         switch (used) {
             case USED_WRONG:
@@ -42,6 +43,10 @@ public class HangmanGameBoardField extends GameBoardField implements View.OnClic
 
     public void use(HangmanGameBoardFieldState used) {
         this.used = used;
+    }
+
+    public Button getView() {
+        return (Button) view;
     }
 
     public Character getCharacter() {
