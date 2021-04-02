@@ -1,14 +1,25 @@
 package markus.wieland.hangman;
 
-import androidx.appcompat.app.AppCompatActivity;
+import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
 
-import android.os.Bundle;
+public class MainActivity extends DefaultActivity {
 
-public class MainActivity extends AppCompatActivity {
+    public MainActivity() {
+        super(R.layout.activity_main);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void bindViews() {
+        
+    }
+
+    @Override
+    public void initializeViews() {
+
+    }
+
+    @Override
+    public void execute() {
+
     }
 }
