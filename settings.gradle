@@ -1,0 +1,3 @@
+include ':games'
+include ':app'
+rootProject.name = "Hangman"
