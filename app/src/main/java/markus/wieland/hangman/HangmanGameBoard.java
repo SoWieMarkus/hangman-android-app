@@ -1,28 +1,33 @@
 package markus.wieland.hangman;
 
+import android.content.Context;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.bumptech.glide.Glide;
 
 import markus.wieland.games.game.GameBoard;
 import markus.wieland.games.game.GameBoardInteractionListener;
 
 public class HangmanGameBoard extends GameBoard<ConstraintLayout, HangmanGameBoardField, HangmanGameState> implements HangmanGameBoardInteractionListener {
 
-    private ImageView imageView;
-    private TextView textView;
+    private final ImageView imageView;
+    private final TextView textView;
 
     private static final char[] CHARACTERS = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',};
 
     public HangmanGameBoard(ConstraintLayout linearLayout, GameBoardInteractionListener<HangmanGameBoardField> gameBoardInteractionListener) {
         super(1, 26, linearLayout, gameBoardInteractionListener);
+        imageView = findViewById(R.id.hangman_image);
+        textView = findViewById(R.id.hangman_word);
     }
 
     @Override
     protected void initializeFields() {
         for (int i = 0; i < 26; i++) {
-            matrix.set(1,i, new HangmanGameBoardField(this,CHARACTERS[i],findViewById(getIdByString(layout.getContext(), String.valueOf(CHARACTERS[i])))));
+            matrix.set(0, i, new HangmanGameBoardField(this, CHARACTERS[i], findViewById(layout.getContext(), String.valueOf(CHARACTERS[i]).toLowerCase())));
         }
     }
 
@@ -50,10 +55,14 @@ public class HangmanGameBoard extends GameBoard<ConstraintLayout, HangmanGameBoa
 
     @Override
     public void onClick(HangmanGameBoardField hangmanGameBoardField) {
-        ((HangmanGameBoardInteractionListener)gameBoardInteractionListener).onClick(hangmanGameBoardField);
+        ((HangmanGameBoardInteractionListener) gameBoardInteractionListener).onClick(hangmanGameBoardField);
     }
 
-    public void showHangman(int amountErrors){
-
+    public void update(int amountErrors, HangmanWord word) {
+        Context context = layout.getContext();
+        textView.setText(word.getWordWithSpaces());
+        Glide.with(context).load(context.getResources().getIdentifier("h" + amountErrors,
+                "drawable",
+                context.getPackageName())).into(imageView);
     }
 }

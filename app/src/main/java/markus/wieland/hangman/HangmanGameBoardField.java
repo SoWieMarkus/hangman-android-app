@@ -20,6 +20,8 @@ public class HangmanGameBoardField extends GameBoardField implements View.OnClic
         this.character = character;
         this.listener = listener;
         this.used = HangmanGameBoardFieldState.NOT_USED;
+
+        view.setOnClickListener(this);
     }
 
     @Override
