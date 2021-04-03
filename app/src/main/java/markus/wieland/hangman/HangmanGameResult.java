@@ -2,7 +2,7 @@ package markus.wieland.hangman;
 
 import markus.wieland.games.game.GameResult;
 
-public class HangmanGameResult extends GameResult {
+public class HangmanGameResult implements GameResult {
 
     private final boolean win;
     private final String originalWord;

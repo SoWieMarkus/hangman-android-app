@@ -1,8 +1,12 @@
-package markus.wieland.hangman;
+package markus.wieland.hangman.models;
+
+import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import markus.wieland.hangman.HangmanGameBoardFieldState;
 
 public class HangmanWord implements Serializable {
 
@@ -10,7 +14,7 @@ public class HangmanWord implements Serializable {
     private final String originalWord;
     private final List<Character> correctChars;
 
-    public HangmanWord(String word) {
+    public HangmanWord(@NonNull String word) {
         this.word = word.toUpperCase();
         this.originalWord = word;
         this.correctChars = new ArrayList<>();

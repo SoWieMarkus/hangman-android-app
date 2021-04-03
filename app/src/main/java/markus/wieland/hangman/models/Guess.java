@@ -1,6 +1,8 @@
-package markus.wieland.hangman;
+package markus.wieland.hangman.models;
 
 import java.io.Serializable;
+
+import markus.wieland.hangman.HangmanGameBoardFieldState;
 
 public class Guess implements Serializable {
     private final Character character;

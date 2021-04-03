@@ -5,16 +5,82 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HangmanActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/endMenu"
+        android:id="@+id/activity_hangman_end_screen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0"
         android:background="#BFFF0000"
         android:elevation="16dp"
-        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/word_win"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hangman_solution"
+                android:textColor="#fff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/word_win" />
+
+            <TextView
+                android:id="@+id/word_was"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView60" />
+
+            <Button
+                android:id="@+id/again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hangman_play_again"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/word_was" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_hangman_start_screen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#BF4CAF50"
+        android:elevation="32dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,87 +96,10 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/word_win"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Verloren!"
-                android:textColor="#fff"
-                android:textSize="36sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView60"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Das Wort war:"
-                android:textColor="#fff"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/word_win" />
-
-            <TextView
-                android:id="@+id/word_was"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:gravity="center"
-                android:text="TextView"
-                android:textColor="#fff"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView60" />
-
-            <Button
-                android:id="@+id/again"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Erneut spielen"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/word_was" />
-
-            <Button
-                android:id="@+id/quit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Verlassen"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/again" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/startmenu"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#BF4CAF50"
-        android:elevation="32dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
                 android:id="@+id/textView51"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Galgenraten"
+                android:text="@string/hangman_title"
                 android:textColor="#fff"
                 android:textSize="36sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -122,14 +111,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Wort eingeben"
+                android:text="@string/hangman_enter_word"
                 android:textColor="#fff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView51" />
 
             <EditText
-                android:id="@+id/enterWord"
+                android:id="@+id/activity_hangman_start_screen_enter_word"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -142,20 +131,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView50" />
 
             <Button
-                android:id="@+id/start"
+                android:id="@+id/activity_hangman_start_screen_start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Start"
+                android:text="@string/hangman_start_game"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/enterWord" />
+                app:layout_constraintTop_toBottomOf="@+id/activity_hangman_start_screen_enter_word" />
 
             <LinearLayout
                 android:id="@+id/linearLayout16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/start">
+                app:layout_constraintTop_toBottomOf="@+id/activity_hangman_start_screen_start">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -173,7 +162,7 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="ODER"
+                    android:text="@string/hangman_or"
                     android:textColor="#fff"
                     android:textSize="24sp" />
 
@@ -188,10 +177,10 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/randomWord"
+                android:id="@+id/activity_hangman_start_screen_random_word"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Zufälliges Wort"
+                android:text="@string/hangman_random_word"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout16" />
@@ -238,10 +227,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="16dp"
-
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="__________"
                 android:textSize="18sp" />
 
             <TextView
@@ -268,7 +255,9 @@
         android:background="#f2f2f2"
         android:elevation="8dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"

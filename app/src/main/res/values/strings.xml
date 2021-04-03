@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Hangman</string>
+    <string name="hangman_title">Hangman</string>
+    <string name="hangman_game_over">You lose!</string>
+    <string name="hangman_solution">The word was:</string>
+    <string name="hangman_win">You win!</string>
+    <string name="hangman_play_again">Play again</string>
+    <string name="hangman_enter_word">Enter a word</string>
+    <string name="hangman_start_game">Start</string>
+    <string name="hangman_random_word">Random word</string>
+    <string name="hangman_or">or</string>
 </resources>

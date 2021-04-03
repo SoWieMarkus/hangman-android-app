@@ -10,6 +10,8 @@ import com.bumptech.glide.Glide;
 
 import markus.wieland.games.game.GameBoard;
 import markus.wieland.games.game.GameBoardInteractionListener;
+import markus.wieland.hangman.models.Guess;
+import markus.wieland.hangman.models.HangmanWord;
 
 public class HangmanGameBoard extends GameBoard<ConstraintLayout, HangmanGameBoardField, HangmanGameState> implements HangmanGameBoardInteractionListener {
 

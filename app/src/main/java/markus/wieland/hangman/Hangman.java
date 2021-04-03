@@ -6,6 +6,8 @@ import java.util.List;
 
 import markus.wieland.games.game.Game;
 import markus.wieland.games.game.GameEventListener;
+import markus.wieland.hangman.models.Guess;
+import markus.wieland.hangman.models.HangmanWord;
 
 public class Hangman extends Game<HangmanGameState, HangmanGameResult> implements HangmanGameBoardInteractionListener {
 
@@ -28,6 +30,11 @@ public class Hangman extends Game<HangmanGameState, HangmanGameResult> implement
     }
 
     @Override
+    public HangmanGameResult getResult() {
+        return checkForFinish();
+    }
+
+    @Override
     public void onClick(HangmanGameBoardField hangmanGameBoardField) {
         HangmanGameBoardFieldState state = word.checkLetter(hangmanGameBoardField.getCharacter());
         used.add(new Guess(hangmanGameBoardField.getCharacter(), state));
@@ -35,7 +42,7 @@ public class Hangman extends Game<HangmanGameState, HangmanGameResult> implement
         hangmanGameBoardField.update();
         hangmanGameBoard.update(getAmountErrors(), word);
 
-        HangmanGameResult result = checkForFinish();
+        HangmanGameResult result = getResult();
         if (result != null)
             gameEventListener.onGameFinish(result);
     }

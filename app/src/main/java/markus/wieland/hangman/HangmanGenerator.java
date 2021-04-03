@@ -12,8 +12,9 @@ import java.util.Locale;
 import java.util.Random;
 
 import markus.wieland.games.persistence.GameGenerator;
+import markus.wieland.hangman.models.HangmanWord;
 
-public class HangmanGenerator extends GameGenerator<HangmanGameState> {
+public class HangmanGenerator implements GameGenerator<HangmanGameState> {
 
     private static final List<String> WORDS = new ArrayList<>();
 
@@ -33,16 +34,20 @@ public class HangmanGenerator extends GameGenerator<HangmanGameState> {
         String word;
         do {
             word = WORDS.get(random.nextInt(WORDS.size()));
-        } while (!word.matches("[a-zA-Z]+"));
+        } while (!doesMatchPattern(word));
 
         return new HangmanGameState(new HangmanWord(word));
+    }
+
+    public static boolean doesMatchPattern(String word) {
+        return word.matches("[a-zA-Z]+");
     }
 
     private void loadWords() {
         try {
             WORDS.clear();
             Locale current = ConfigurationCompat.getLocales(context.getResources().getConfiguration()).get(0);
-            String fileName = current.getCountry().equalsIgnoreCase("de")
+            String fileName = current.getCountry().equalsIgnoreCase("de_DE")
                     ? "words.txt"
                     : "words_de.txt";
             BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(fileName)));

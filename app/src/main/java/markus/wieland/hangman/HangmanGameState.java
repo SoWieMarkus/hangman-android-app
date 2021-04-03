@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import markus.wieland.games.persistence.GameState;
+import markus.wieland.hangman.models.Guess;
+import markus.wieland.hangman.models.HangmanWord;
 
-public class HangmanGameState extends GameState implements Serializable {
+public class HangmanGameState implements GameState, Serializable {
 
     private final HangmanWord word;
     private final List<Guess> usedCharacters;
