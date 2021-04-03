@@ -1,10 +1,12 @@
 package markus.wieland.hangman.ui.screens;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
 import markus.wieland.games.screen.EndScreen;
+import markus.wieland.games.screen.interact_listener.EndScreenInteractListener;
 import markus.wieland.hangman.HangmanGameResult;
 import markus.wieland.hangman.R;
 
@@ -15,8 +17,8 @@ public class HangmanEndScreen extends EndScreen implements View.OnClickListener 
 
     public HangmanEndScreen(Activity activity) {
         super(activity.findViewById(R.id.activity_hangman_end_screen));
-        tvWinMessage = activity.findViewById(R.id.word_win);
-        tvWordWas = activity.findViewById(R.id.word_was);
+        tvWinMessage = activity.findViewById(R.id.activity_hangman_end_screen_word_win);
+        tvWordWas = activity.findViewById(R.id.activity_hangman_end_screen_word_was);
 
         activity.findViewById(R.id.again).setOnClickListener(this);
     }
@@ -31,11 +33,14 @@ public class HangmanEndScreen extends EndScreen implements View.OnClickListener 
         tvWinMessage.setText(hangmanGameResult.isWin()
                 ? R.string.hangman_win
                 : R.string.hangman_game_over);
+        background.setBackgroundColor(hangmanGameResult.isWin()
+                ? Color.parseColor("#BF4CAF50")
+                : Color.parseColor("#BFFF0000"));
         tvWordWas.setText(hangmanGameResult.getOriginalWord());
     }
 
     @Override
     public void onClick(View v) {
-
+        ((EndScreenInteractListener) screenInteractListener).onClose();
     }
 }

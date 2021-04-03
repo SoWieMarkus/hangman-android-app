@@ -7,11 +7,69 @@
     android:layout_height="match_parent"
     tools:context=".HangmanActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:elevation="8dp">
+
+                <ImageView
+                    android:id="@+id/hangman_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#fff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/hangman_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="Die Worte stammen aus dem Internet. Daher kann es durchaus sein, dass ein sehr komisches Wort gezogen wurde. Daher:" />
+
+            <TextView
+                android:id="@+id/duden"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
+
+        </LinearLayout>
+    </ScrollView>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/activity_hangman_end_screen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0"
         android:background="#BFFF0000"
         android:elevation="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +88,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/word_win"
+                android:id="@+id/activity_hangman_end_screen_word_win"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
@@ -47,10 +105,10 @@
                 android:textColor="#fff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/word_win" />
+                app:layout_constraintTop_toBottomOf="@+id/activity_hangman_end_screen_word_win" />
 
             <TextView
-                android:id="@+id/word_was"
+                android:id="@+id/activity_hangman_end_screen_word_was"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -69,7 +127,7 @@
                 android:text="@string/hangman_play_again"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/word_was" />
+                app:layout_constraintTop_toBottomOf="@+id/activity_hangman_end_screen_word_was" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -188,65 +246,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff"
-                android:elevation="8dp">
-
-                <ImageView
-                    android:id="@+id/hangman_image"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:background="#fff"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintDimensionRatio="1:1"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/hangman_word"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="16dp"
-                android:gravity="center"
-                android:padding="8dp"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="Die Worte stammen aus dem Internet. Daher kann es durchaus sein, dass ein sehr komisches Wort gezogen wurde. Daher:" />
-
-            <TextView
-                android:id="@+id/duden"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center" />
-
-        </LinearLayout>
-    </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearLayout12"

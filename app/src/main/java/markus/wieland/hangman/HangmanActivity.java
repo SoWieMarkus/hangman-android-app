@@ -1,10 +1,5 @@
 package markus.wieland.hangman;
 
-import android.os.Bundle;
-import android.os.PersistableBundle;
-
-import androidx.annotation.Nullable;
-
 import markus.wieland.games.GameActivity;
 import markus.wieland.games.game.GameConfiguration;
 import markus.wieland.games.game.GameEventListener;
@@ -62,4 +57,5 @@ public class HangmanActivity extends GameActivity<Highscore, HangmanGameState, H
         game = new Hangman(findViewById(R.id.background),hangmanGameState, this);
         game.start();
     }
+
 }
