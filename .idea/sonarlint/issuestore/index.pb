@@ -31,3 +31,5 @@ y
 Iapp/src/main/java/markus/wieland/hangman/ui/screens/HangmanEndScreen.java,4\6\4697864e37f73fd6f2e9faa4fd5bf8560e3e902e
 m
 =app/src/main/java/markus/wieland/hangman/HangmanActivity.java,8\3\83b1079cd731ddc2f3b1099bd5f0b5fb81816e52
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
