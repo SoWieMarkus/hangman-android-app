@@ -1,32 +1,36 @@
 package markus.wieland.hangman.ui.screens;
 
-import android.app.Activity;
+import android.content.Context;
+import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import markus.wieland.games.screen.StartScreen;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import markus.wieland.games.screen.view.StartScreenView;
 import markus.wieland.hangman.HangmanConfiguration;
 import markus.wieland.hangman.HangmanGenerator;
 import markus.wieland.hangman.R;
 import markus.wieland.hangman.models.HangmanWord;
 
-public class HangmanStartScreen extends StartScreen implements View.OnClickListener {
+public class HangmanStartScreen extends StartScreenView implements View.OnClickListener {
 
-    private final EditText editTextWordInput;
+    private EditText editTextWordInput;
 
     private boolean randomWord;
 
-    public HangmanStartScreen(Activity activity) {
-        super(activity.findViewById(R.id.activity_hangman_start_screen));
-        Button buttonStartWithCustomWord = activity.findViewById(R.id.activity_hangman_start_screen_start);
-        Button buttonStartWithRandomWord = activity.findViewById(R.id.activity_hangman_start_screen_random_word);
+    public HangmanStartScreen(@NonNull Context context) {
+        super(context);
+    }
 
-        this.editTextWordInput = activity.findViewById(R.id.activity_hangman_start_screen_enter_word);
-        this.randomWord = false;
+    public HangmanStartScreen(@NonNull Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+    }
 
-        buttonStartWithCustomWord.setOnClickListener(this);
-        buttonStartWithRandomWord.setOnClickListener(v -> randomWord());
+    public HangmanStartScreen(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
     }
 
     @Override
@@ -49,5 +53,17 @@ public class HangmanStartScreen extends StartScreen implements View.OnClickListe
         if (!HangmanGenerator.doesMatchPattern(word)) return;
         randomWord = false;
         close();
+    }
+
+    @Override
+    protected void onBuild() {
+        Button buttonStartWithCustomWord = findViewById(R.id.activity_hangman_start_screen_start);
+        Button buttonStartWithRandomWord = findViewById(R.id.activity_hangman_start_screen_random_word);
+
+        this.editTextWordInput = findViewById(R.id.activity_hangman_start_screen_enter_word);
+        this.randomWord = false;
+
+        buttonStartWithCustomWord.setOnClickListener(this);
+        buttonStartWithRandomWord.setOnClickListener(v -> randomWord());
     }
 }
