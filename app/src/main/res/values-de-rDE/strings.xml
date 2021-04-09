@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Hangman</string>
+    <string name="app_name">Galgenraten</string>
     <string name="hangman_title">Galgenraten</string>
     <string name="hangman_solution">Das Wort war:</string>
     <string name="hangman_game_over" translatable="false">Verloren!</string>

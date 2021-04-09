@@ -50,9 +50,9 @@ public class HangmanGenerator extends GameGenerator<HangmanGameState> {
         try {
             WORDS.clear();
             Locale current = ConfigurationCompat.getLocales(context.getResources().getConfiguration()).get(0);
-            String fileName = current.getCountry().equalsIgnoreCase("de_DE")
-                    ? "words.txt"
-                    : "words_de.txt";
+            String fileName = current.toString().equalsIgnoreCase("de_DE")
+                    ? "words_de.txt"
+                    : "words.txt";
             BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(fileName)));
             String word;
             while ((word = reader.readLine()) != null) {
