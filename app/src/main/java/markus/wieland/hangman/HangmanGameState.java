@@ -1,33 +1,33 @@
 package markus.wieland.hangman;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
-import markus.wieland.games.persistence.GameState;
-import markus.wieland.hangman.models.Guess;
+import markus.wieland.games.elements.Coordinate;
+import markus.wieland.games.elements.SerializableMatrix;
+import markus.wieland.games.game.grid.GridGameState;
 import markus.wieland.hangman.models.HangmanWord;
 
-public class HangmanGameState implements GameState, Serializable {
+public class HangmanGameState extends GridGameState<HangmanGameStateField> {
 
     private final HangmanWord word;
-    private final List<Guess> usedCharacters;
 
-    public HangmanGameState(HangmanWord word) {
+    public HangmanGameState(SerializableMatrix<HangmanGameStateField> matrix, HangmanWord word) {
+        super(matrix);
         this.word = word;
-        this.usedCharacters = new ArrayList<>();
     }
 
-    public HangmanGameState(HangmanWord word, List<Guess> usedCharacters) {
+    public HangmanGameState(HangmanWord word) {
+        super(getDefaultMatrix());
         this.word = word;
-        this.usedCharacters = usedCharacters;
+    }
+
+    private static SerializableMatrix<HangmanGameStateField> getDefaultMatrix() {
+        SerializableMatrix<HangmanGameStateField> hangmanGameStateField = new SerializableMatrix<>(26, 1);
+        for (int i = 0; i < HangmanGameBoardView.CHARACTERS.length; i++) {
+            hangmanGameStateField.set(i, 0, new HangmanGameStateField(new Coordinate(i, 0), HangmanGameBoardView.CHARACTERS[i], HangmanGameBoardFieldState.NOT_USED));
+        }
+        return hangmanGameStateField;
     }
 
     public HangmanWord getWord() {
         return word;
-    }
-
-    public List<Guess> getUsedCharacters() {
-        return usedCharacters;
     }
 }

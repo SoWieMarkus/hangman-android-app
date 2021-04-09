@@ -1,7 +1,7 @@
 package markus.wieland.hangman;
 
-import markus.wieland.games.game.GameBoardInteractionListener;
+import markus.wieland.games.game.view.GameBoardInteractionListener;
 
-public interface HangmanGameBoardInteractionListener extends GameBoardInteractionListener<HangmanGameBoardField> {
-    void onClick(HangmanGameBoardField hangmanGameBoardField);
+public interface HangmanGameBoardInteractionListener extends GameBoardInteractionListener {
+    void onClick(HangmanGameBoardFieldView hangmanGameBoardField);
 }

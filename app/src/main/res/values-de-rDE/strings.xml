@@ -10,4 +10,7 @@
     <string name="hangman_start_game">Starten</string>
     <string name="hangman_random_word">Zufälliges Wort</string>
     <string name="hangman_or">oder</string>
+    <string name="hangman_error_empty_word">Bitte gib ein Wort ein.</string>
+    <string name="hangman_error_wrong_pattern">Das Wort darf nur aus Buchstaben von A-Z bestehen. Es sind keine Sonderzeichen/Leerzeichen erlaubt.</string>
+    <string name="hangman_back">Hauptmenü</string>
 </resources>

@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="A"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="B"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="C"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="D"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/e"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="E"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="F"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/g"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="G"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/h"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="H"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/i"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+
+                android:text="I"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/j"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="J"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/k"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="K"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/l"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="L"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/m"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="M"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/n"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="N"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/o"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="O"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="P"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/q"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="Q"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="R"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+
+                android:text="S"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/t"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="T"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/u"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="U"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/v"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="V"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/w"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="W"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="X"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/y"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="Y"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+            <markus.wieland.hangman.HangmanGameBoardFieldView
+                android:id="@+id/z"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="?attr/hangmanGameBoardViewBackgroundColor"
+                android:elevation="8dp"
+                android:text="Z"
+                android:textColor="?attr/hangmanGameBoardViewTextColor" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:elevation="8dp">
+
+                <ImageView
+                    android:id="@+id/hangman_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="#fff"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/hangman_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

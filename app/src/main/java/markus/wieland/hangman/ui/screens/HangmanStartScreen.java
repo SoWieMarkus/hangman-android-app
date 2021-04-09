@@ -3,8 +3,10 @@ package markus.wieland.hangman.ui.screens;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -46,17 +48,25 @@ public class HangmanStartScreen extends StartScreenView implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        String word = editTextWordInput.getText().toString();
-
-        //TODO ERROR Messages
-        if (word.isEmpty()) return;
-        if (!HangmanGenerator.doesMatchPattern(word)) return;
+        String word = editTextWordInput.getText().toString().trim();
+        if (word.isEmpty()){
+            Toast.makeText(getContext(), getContext().getString(R.string.hangman_error_empty_word), Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!HangmanGenerator.doesMatchPattern(word)){
+            Toast.makeText(getContext(), getContext().getString(R.string.hangman_error_wrong_pattern), Toast.LENGTH_SHORT).show();
+            return;
+        }
         randomWord = false;
+        InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getWindowToken(), 0);
         close();
     }
 
     @Override
     protected void onBuild() {
+        setBackgroundColor(getContext().getColor(R.color.start));
+
         Button buttonStartWithCustomWord = findViewById(R.id.activity_hangman_start_screen_start);
         Button buttonStartWithRandomWord = findViewById(R.id.activity_hangman_start_screen_random_word);
 

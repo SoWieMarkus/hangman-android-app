@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Hangman" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Hangman" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/hangman_field_background_night</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -12,5 +12,12 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="backgroundMainColor">@color/background_main_light</item>
+        <item name="hangmanGameBoardViewBackgroundColor">@color/hangman_field_background_light</item>
+        <item name="hangmanGameBoardViewTextColor">@color/black</item>
+
+
+
     </style>
 </resources>

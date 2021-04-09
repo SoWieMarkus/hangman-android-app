@@ -11,17 +11,20 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
+import markus.wieland.games.elements.Coordinate;
+import markus.wieland.games.elements.SerializableMatrix;
 import markus.wieland.games.persistence.GameGenerator;
 import markus.wieland.hangman.models.HangmanWord;
 
-public class HangmanGenerator implements GameGenerator<HangmanGameState> {
+public class HangmanGenerator extends GameGenerator<HangmanGameState> {
 
     private static final List<String> WORDS = new ArrayList<>();
 
     private final Context context;
     private final Random random;
 
-    public HangmanGenerator(Context context) {
+    public HangmanGenerator(HangmanConfiguration hangmanConfiguration, Context context) {
+        super(hangmanConfiguration);
         this.context = context;
         this.random = new Random();
     }
@@ -36,7 +39,7 @@ public class HangmanGenerator implements GameGenerator<HangmanGameState> {
             word = WORDS.get(random.nextInt(WORDS.size()));
         } while (!doesMatchPattern(word));
 
-        return new HangmanGameState(new HangmanWord(word));
+        return new HangmanGameState (new HangmanWord(word));
     }
 
     public static boolean doesMatchPattern(String word) {

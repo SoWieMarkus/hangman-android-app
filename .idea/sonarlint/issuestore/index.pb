@@ -1,8 +1,6 @@
 
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-s
-Capp/src/main/java/markus/wieland/hangman/HangmanGameBoardField.java,4\8\48087657bf75db207354b0c3695d063bbc6d2486
 n
 >app/src/main/java/markus/wieland/hangman/HangmanGenerator.java,2\9\29c904deb52a4d574950c4d097b0206552752165
 n
@@ -17,8 +15,6 @@ o
 ?app/src/main/java/markus/wieland/hangman/HangmanGameResult.java,9\8\98bda60394fad2615d7ec47909eec1c472bc4494
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-n
->app/src/main/java/markus/wieland/hangman/HangmanGameBoard.java,8\2\82bffdcbf2b3d983accb83b8c32f4d587d080bca
 j
 :app/src/main/java/markus/wieland/hangman/models/Guess.java,1\8\18d8e2088cd0531ab390953dbc5cbafb4d556ab9
 p

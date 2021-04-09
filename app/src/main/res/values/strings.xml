@@ -9,4 +9,7 @@
     <string name="hangman_start_game">Start</string>
     <string name="hangman_random_word">Random word</string>
     <string name="hangman_or">or</string>
+    <string name="hangman_error_empty_word">Please enter a word.</string>
+    <string name="hangman_error_wrong_pattern">The word can only contain letters from A-Z. No special characters and spaces are allowed.</string>
+    <string name="hangman_back">Back to main menu</string>
 </resources>

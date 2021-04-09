@@ -5,6 +5,7 @@ import java.io.Serializable;
 import markus.wieland.hangman.HangmanGameBoardFieldState;
 
 public class Guess implements Serializable {
+
     private final Character character;
     private final HangmanGameBoardFieldState used;
 

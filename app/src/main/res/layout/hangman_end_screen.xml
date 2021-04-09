@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#BFFF0000">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +31,7 @@
 
         <TextView
             android:id="@+id/activity_hangman_end_screen_word_was"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -40,17 +39,28 @@
             android:textColor="#fff"
             android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/again"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hangman_play_again" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="16dp"
+            android:background="@color/white"
+            android:orientation="vertical"></LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/hangman_end_screen_play_again"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/hangman_play_again"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/hangman_end_screen_back"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hangman_back"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
