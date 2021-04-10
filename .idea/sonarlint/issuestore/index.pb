@@ -15,8 +15,6 @@ o
 ?app/src/main/java/markus/wieland/hangman/HangmanGameResult.java,9\8\98bda60394fad2615d7ec47909eec1c472bc4494
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-j
-:app/src/main/java/markus/wieland/hangman/models/Guess.java,1\8\18d8e2088cd0531ab390953dbc5cbafb4d556ab9
 p
 @app/src/main/java/markus/wieland/hangman/models/HangmanWord.java,8\e\8efa0827f36b315d10274c3cfbb307ecf25b38d9
 r
@@ -29,3 +27,13 @@ m
 =app/src/main/java/markus/wieland/hangman/HangmanActivity.java,8\3\83b1079cd731ddc2f3b1099bd5f0b5fb81816e52
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+Z
+*app/src/main/res/values-de-rDE/strings.xml,9\1\91c6b5dad1040dde997c796c6f6950fb8031e9e6
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+w
+Gapp/src/main/java/markus/wieland/hangman/HangmanGameBoardFieldView.java,a\1\a1f2add6f1bfc500939e7ec1dab569d16d414b8e
+s
+Capp/src/main/java/markus/wieland/hangman/HangmanGameStateField.java,3\c\3c4d4daa4c6f989578ef5bf264047bbe41cdd7b1
+r
+Bapp/src/main/java/markus/wieland/hangman/HangmanGameBoardView.java,5\0\50d1f2504f3ce1b8624f436f134b6a5e8365350f
