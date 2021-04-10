@@ -5,5 +5,7 @@
     <attr name="hangmanGameBoardViewBackgroundColor" format="color"/>
     <attr name="hangmanGameBoardViewTextColor" format="color"/>
 
+    <attr name="darkModeActivated" format="boolean"/>
+
 
 </resources>

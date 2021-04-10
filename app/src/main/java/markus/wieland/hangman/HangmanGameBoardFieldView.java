@@ -3,7 +3,6 @@ package markus.wieland.hangman;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 

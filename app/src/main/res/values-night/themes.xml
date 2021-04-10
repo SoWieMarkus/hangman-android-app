@@ -16,5 +16,8 @@
         <item name="backgroundMainColor">@color/background_main_night</item>
         <item name="hangmanGameBoardViewBackgroundColor">@color/hangman_field_background_night</item>
         <item name="hangmanGameBoardViewTextColor">@color/white</item>
+
+        <item name="darkModeActivated">true</item>
+
     </style>
 </resources>

@@ -49,17 +49,18 @@ public class HangmanStartScreen extends StartScreenView implements View.OnClickL
     @Override
     public void onClick(View v) {
         String word = editTextWordInput.getText().toString().trim();
-        if (word.isEmpty()){
+        if (word.isEmpty()) {
             Toast.makeText(getContext(), getContext().getString(R.string.hangman_error_empty_word), Toast.LENGTH_SHORT).show();
             return;
         }
-        if (!HangmanGenerator.doesMatchPattern(word)){
+        if (HangmanGenerator.doesNotMatchPattern(word)) {
             Toast.makeText(getContext(), getContext().getString(R.string.hangman_error_wrong_pattern), Toast.LENGTH_SHORT).show();
             return;
         }
         randomWord = false;
-        InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getWindowToken(), 0);
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null)
+            imm.hideSoftInputFromWindow(getWindowToken(), 0);
         close();
     }
 

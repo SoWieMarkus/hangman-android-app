@@ -339,14 +339,12 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#fff">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/hangman_image"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="#fff"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintDimensionRatio="1:1"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -1,6 +1,7 @@
 package markus.wieland.hangman;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -11,7 +12,6 @@ import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
 
-import markus.wieland.games.elements.Matrix;
 import markus.wieland.games.elements.SerializableMatrix;
 import markus.wieland.games.game.GameResult;
 import markus.wieland.games.game.grid.GridGameBoardView;
@@ -20,7 +20,7 @@ import markus.wieland.hangman.models.HangmanWord;
 
 public class HangmanGameBoardView extends GridGameBoardView<HangmanGameBoardFieldView> implements View.OnClickListener {
 
-    public static final char[] CHARACTERS = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',};
+    protected static final char[] CHARACTERS = new char[]{'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',};
 
     private ImageView imageViewHangmanProgress;
     private TextView textViewHangmanWord;
@@ -47,12 +47,18 @@ public class HangmanGameBoardView extends GridGameBoardView<HangmanGameBoardFiel
     }
 
     public void updateHangmanImage() {
-        Glide.with(getContext()).load(getContext().getResources().getIdentifier("h" + getAmountOfErrors(),
+
+        boolean isDarkThemeOn = (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES;
+        String fileName = "h" + getAmountOfErrors();
+        if (isDarkThemeOn)
+            fileName += "_dark";
+
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier(fileName,
                 "drawable",
                 getContext().getPackageName())).into(imageViewHangmanProgress);
     }
 
-    public SerializableMatrix<HangmanGameStateField> getGameState(){
+    public SerializableMatrix<HangmanGameStateField> getGameState() {
         SerializableMatrix<HangmanGameStateField> hangmanGameStateField = new SerializableMatrix<>(getSizeX(), getSizeY());
         for (HangmanGameBoardFieldView view : matrix) {
             hangmanGameStateField.set(view.getCoordinate(), view.getGameStateField());
@@ -107,7 +113,7 @@ public class HangmanGameBoardView extends GridGameBoardView<HangmanGameBoardFiel
         }
     }
 
-    public void update(){
+    public void update() {
         for (HangmanGameBoardFieldView view : matrix) {
             view.update();
         }
@@ -115,7 +121,7 @@ public class HangmanGameBoardView extends GridGameBoardView<HangmanGameBoardFiel
 
     @Override
     public void onClick(View view) {
-        HangmanGameBoardFieldView hangmanGameBoardFieldView = (HangmanGameBoardFieldView)view;
+        HangmanGameBoardFieldView hangmanGameBoardFieldView = (HangmanGameBoardFieldView) view;
         if (hangmanGameBoardFieldView.getUsed().equals(HangmanGameBoardFieldState.NOT_USED))
             ((HangmanGameBoardInteractionListener) gameBoardInteractionListener).onClick(hangmanGameBoardFieldView);
     }

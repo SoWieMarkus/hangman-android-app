@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-import markus.wieland.games.elements.Coordinate;
-import markus.wieland.games.elements.SerializableMatrix;
 import markus.wieland.games.persistence.GameGenerator;
 import markus.wieland.hangman.models.HangmanWord;
 
@@ -37,23 +35,23 @@ public class HangmanGenerator extends GameGenerator<HangmanGameState> {
         String word;
         do {
             word = WORDS.get(random.nextInt(WORDS.size()));
-        } while (!doesMatchPattern(word));
+        } while (doesNotMatchPattern(word));
 
-        return new HangmanGameState (new HangmanWord(word));
+        return new HangmanGameState(new HangmanWord(word));
     }
 
-    public static boolean doesMatchPattern(String word) {
-        return word.matches("[a-zA-Z]+");
+    public static boolean doesNotMatchPattern(String word) {
+        return !word.matches("[a-zA-Z]+");
     }
 
     private void loadWords() {
-        try {
-            WORDS.clear();
-            Locale current = ConfigurationCompat.getLocales(context.getResources().getConfiguration()).get(0);
-            String fileName = current.toString().equalsIgnoreCase("de_DE")
-                    ? "words_de.txt"
-                    : "words.txt";
-            BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(fileName)));
+        WORDS.clear();
+        Locale current = ConfigurationCompat.getLocales(context.getResources().getConfiguration()).get(0);
+        String fileName = current.toString().equalsIgnoreCase("de_DE")
+                ? "words_de.txt"
+                : "words.txt";
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(fileName)))) {
             String word;
             while ((word = reader.readLine()) != null) {
                 WORDS.add(word);
