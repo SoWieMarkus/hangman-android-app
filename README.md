@@ -13,14 +13,5 @@ Hangman game which uses my <a href="https://github.com/SoWieMarkus/Games">Androi
 
 ## Screenshots
 
-<img src="https://github.com/SoWieMarkus/Hangman/blob/main/screenshots/Screenshot_20210410-023738_Hangman.jpg" width="33%"><img src="https://github.com/SoWieMarkus/Minesweeper/blob/main/screenshots/Screenshot_20210411-214450_Minesweeper.jpg" width="33%"><img src="https://github.com/SoWieMarkus/Minesweeper/blob/main/screenshots/Screenshot_20210411-214459_Minesweeper.jpg" width="33%">
-Screenshot_20210410-023738_Hangman.jpg
-added screenshots
-10 days ago
-Screenshot_20210410-023910_Hangman.jpg
-added screenshots
-10 days ago
-Screenshot_20210410-023921_Hangman.jpg
-added screenshots
-10 days ago
-Screenshot_20210410-023926_Hangman.jpg
+<img src="https://github.com/SoWieMarkus/Hangman/blob/master/screenshots/english/Screenshot_20210410-023738_Hangman.jpg" width="25%"><img src="https://github.com/SoWieMarkus/Hangman/blob/master/screenshots/english/Screenshot_20210410-023910_Hangman.jpg" width="25%"><img src="https://github.com/SoWieMarkus/Hangman/blob/master/screenshots/english/Screenshot_20210410-023921_Hangman.jpg" width="25%"><img src="https://github.com/SoWieMarkus/Hangman/blob/master/screenshots/english/Screenshot_20210410-023926_Hangman.jpg" width="25%">
+
