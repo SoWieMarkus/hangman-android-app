@@ -1,6 +1,6 @@
 # Hangman
 
-Hangman game which uses my <a href="https://github.com/SoWieMarkus/android-games-package">android-games-package</a>.
+Hangman game which uses my <a href="https://github.com/SoWieMarkus/android-game-package">android-game-package</a>.
 
 * The user can enter a custom word for a friend or get a random word when playing alone.
 * The colors of the buttons indicate if the character was correct.
